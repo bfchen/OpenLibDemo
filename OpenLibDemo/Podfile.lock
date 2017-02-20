@@ -1,0 +1,24 @@
+PODS:
+  - AwesomeMenu (1.0.0)
+  - FSCalendar (2.6.0)
+  - FXBlurView (1.6.4)
+  - HexColors (4.0.0)
+  - YLGIFImage (0.11)
+
+DEPENDENCIES:
+  - AwesomeMenu (~> 1.0.0)
+  - FSCalendar (~> 2.6.0)
+  - FXBlurView (~> 1.6.4)
+  - HexColors (~> 4.0.0)
+  - YLGIFImage (~> 0.11)
+
+SPEC CHECKSUMS:
+  AwesomeMenu: 34bad7f873e4b3cfaa6651fabbb96607d0e8f2b3
+  FSCalendar: c00fa5f4c3ec343ee6f7b804ae19322e9898bb84
+  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
+  HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
+  YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
+
+PODFILE CHECKSUM: dc0c98f6c1e62432b9af58fdbfca9e471a78f964
+
+COCOAPODS: 1.1.1
