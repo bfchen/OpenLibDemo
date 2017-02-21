@@ -64,6 +64,11 @@
 		A1AD6E811E5BC79D00502711 /* chooser-button-input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E7F1E5BC79D00502711 /* chooser-button-input@2x.png */; };
 		A1AD6E841E5BC7A100502711 /* chooser-button-input-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E821E5BC7A100502711 /* chooser-button-input-highlighted.png */; };
 		A1AD6E851E5BC7A100502711 /* chooser-button-input-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E831E5BC7A100502711 /* chooser-button-input-highlighted@2x.png */; };
+		A1AD6E891E5BCBF600502711 /* SphereMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AD6E881E5BCBF600502711 /* SphereMenu.m */; };
+		A1AD6E8B1E5BCC2B00502711 /* start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E8A1E5BCC2B00502711 /* start@2x.png */; };
+		A1AD6E8D1E5BCC3300502711 /* icon-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E8C1E5BCC3300502711 /* icon-twitter@2x.png */; };
+		A1AD6E8F1E5BCC3800502711 /* icon-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E8E1E5BCC3800502711 /* icon-facebook@2x.png */; };
+		A1AD6E911E5BCC3C00502711 /* icon-email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E901E5BCC3C00502711 /* icon-email@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +146,12 @@
 		A1AD6E7F1E5BC79D00502711 /* chooser-button-input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooser-button-input@2x.png"; sourceTree = "<group>"; };
 		A1AD6E821E5BC7A100502711 /* chooser-button-input-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooser-button-input-highlighted.png"; sourceTree = "<group>"; };
 		A1AD6E831E5BC7A100502711 /* chooser-button-input-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooser-button-input-highlighted@2x.png"; sourceTree = "<group>"; };
+		A1AD6E871E5BCBF600502711 /* SphereMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereMenu.h; sourceTree = "<group>"; };
+		A1AD6E881E5BCBF600502711 /* SphereMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SphereMenu.m; sourceTree = "<group>"; };
+		A1AD6E8A1E5BCC2B00502711 /* start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start@2x.png"; sourceTree = "<group>"; };
+		A1AD6E8C1E5BCC3300502711 /* icon-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-twitter@2x.png"; sourceTree = "<group>"; };
+		A1AD6E8E1E5BCC3800502711 /* icon-facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-facebook@2x.png"; sourceTree = "<group>"; };
+		A1AD6E901E5BCC3C00502711 /* icon-email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-email@2x.png"; sourceTree = "<group>"; };
 		A29B7F9530CC4A2C9FD35196 /* libPods-OpenLibDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenLibDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62942C1818A039AFBE94088 /* Pods-OpenLibDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLibDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLibDemo/Pods-OpenLibDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F6264CCE4216EA89198D1C03 /* Pods-OpenLibDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenLibDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenLibDemo/Pods-OpenLibDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +241,7 @@
 		A16810A61E5A9F4000457355 /* OpenLibDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A1AD6E861E5BCBF600502711 /* SphereMenu */,
 				A1AD6E451E5BC74000502711 /* images2 */,
 				A16810AA1E5A9F4000457355 /* AppDelegate.h */,
 				A16810AB1E5A9F4000457355 /* AppDelegate.m */,
@@ -301,6 +313,19 @@
 				A1AD6E471E5BC74700502711 /* chooser-moment-icon-thought@2x.png */,
 			);
 			path = images2;
+			sourceTree = "<group>";
+		};
+		A1AD6E861E5BCBF600502711 /* SphereMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A1AD6E901E5BCC3C00502711 /* icon-email@2x.png */,
+				A1AD6E8E1E5BCC3800502711 /* icon-facebook@2x.png */,
+				A1AD6E8C1E5BCC3300502711 /* icon-twitter@2x.png */,
+				A1AD6E8A1E5BCC2B00502711 /* start@2x.png */,
+				A1AD6E871E5BCBF600502711 /* SphereMenu.h */,
+				A1AD6E881E5BCBF600502711 /* SphereMenu.m */,
+			);
+			path = SphereMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,14 +423,17 @@
 				A1AD6E491E5BC74700502711 /* chooser-moment-icon-thought@2x.png in Resources */,
 				A1AD6E681E5BC78600502711 /* chooser-moment-icon-camera.png in Resources */,
 				A1AD6E4D1E5BC75000502711 /* chooser-moment-icon-thought-highlighted@2x.png in Resources */,
+				A1AD6E8D1E5BCC3300502711 /* icon-twitter@2x.png in Resources */,
 				A1AD6E6C1E5BC78900502711 /* chooser-moment-icon-camera-highlighted.png in Resources */,
 				A100525E1E5AD6A200B62785 /* icon-plus-highlighted.png in Resources */,
+				A1AD6E8B1E5BCC2B00502711 /* start@2x.png in Resources */,
 				A1AD6E5D1E5BC75F00502711 /* chooser-moment-icon-place-highlighted@2x.png in Resources */,
 				A1AD6E601E5BC77B00502711 /* chooser-moment-icon-music.png in Resources */,
 				A100525A1E5AD6A200B62785 /* bg-menuitem-highlighted.png in Resources */,
 				A1AD6E641E5BC78200502711 /* chooser-moment-icon-music-highlighted.png in Resources */,
 				A1AD6E841E5BC7A100502711 /* chooser-button-input-highlighted.png in Resources */,
 				A1AD6E581E5BC75C00502711 /* chooser-moment-icon-place.png in Resources */,
+				A1AD6E8F1E5BCC3800502711 /* icon-facebook@2x.png in Resources */,
 				A10052561E5AD6A200B62785 /* bg-addbutton-highlighted.png in Resources */,
 				A10052631E5AD6A200B62785 /* icon-star@2x.png in Resources */,
 				A1AD6E791E5BC79600502711 /* chooser-button-tab@2x.png in Resources */,
@@ -415,6 +443,7 @@
 				A1AD6E6D1E5BC78900502711 /* chooser-moment-icon-camera-highlighted@2x.png in Resources */,
 				A1AD6E551E5BC75800502711 /* chooser-moment-icon-sleep-highlighted@2x.png in Resources */,
 				A16810B71E5A9F4000457355 /* LaunchScreen.storyboard in Resources */,
+				A1AD6E911E5BCC3C00502711 /* icon-email@2x.png in Resources */,
 				A1AD6E4C1E5BC75000502711 /* chooser-moment-icon-thought-highlighted.png in Resources */,
 				A10052571E5AD6A200B62785 /* bg-addbutton-highlighted@2x.png in Resources */,
 				A100525C1E5AD6A200B62785 /* bg-menuitem.png in Resources */,
@@ -557,6 +586,7 @@
 				A16810AF1E5A9F4000457355 /* ViewController.m in Sources */,
 				A16810AC1E5A9F4000457355 /* AppDelegate.m in Sources */,
 				A16810A91E5A9F4000457355 /* main.m in Sources */,
+				A1AD6E891E5BCBF600502711 /* SphereMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

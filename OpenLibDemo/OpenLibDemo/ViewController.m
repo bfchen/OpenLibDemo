@@ -14,8 +14,10 @@
 #import "AwesomeMenu.h"
 #import "HexColors.h"
 #import "DCPathButton.h"
+#import "SphereMenu.h"
 
-@interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate>
+
+@interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate, SphereMenuDelegate>
 
 @property (nonatomic, weak) FSCalendar *calendar;
 
@@ -44,6 +46,23 @@
     [self hexColor];
     
     [self dcPathMenu];
+
+    [self sphereMenu];
+}
+
+- (void)sphereMenu {
+    UIImage *startImage = [UIImage imageNamed:@"start"];
+    UIImage *image1 = [UIImage imageNamed:@"icon-twitter"];
+    UIImage *image2 = [UIImage imageNamed:@"icon-email"];
+    UIImage *image3 = [UIImage imageNamed:@"icon-facebook"];
+    NSArray *images = @[image1, image2, image3];
+    SphereMenu *sphereMenu = [[SphereMenu alloc] initWithStartPoint:CGPointMake(CGRectGetWidth(self.view.frame) / 2, 320)
+                                                         startImage:startImage
+                                                      submenuImages:images];
+    sphereMenu.sphereDamping = 0.3;
+    sphereMenu.sphereLength = 85;
+    sphereMenu.delegate = self;
+    [self.view addSubview:sphereMenu];
 }
 
 - (void)dcPathMenu {
@@ -196,6 +215,11 @@
 
 - (void)pathButton:(DCPathButton *)dcPathButton clickItemButtonAtIndex:(NSUInteger)itemButtonIndex {
     NSLog(@"%ld", (long)itemButtonIndex);
+}
+
+
+- (void)sphereDidSelected:(int)index {
+    NSLog(@"%d", index);
 }
 
 @end
