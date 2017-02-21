@@ -58,6 +58,8 @@
 
 - (IBAction)scanQRCode:(UIButton *)sender {
     
+//    NSAssert(NO, @"这是一个异常测试");
+    
     QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
     
     QRCodeReaderViewController *readerVC = [QRCodeReaderViewController readerWithCancelButtonTitle:@"cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];

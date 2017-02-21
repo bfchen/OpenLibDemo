@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UMMobClick/MobClick.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UMConfigInstance.appKey = @"58abb2873eae255654000626";
+    UMConfigInstance.channelId = @"App store";
+    
+    [MobClick startWithConfigure:UMConfigInstance];
     return YES;
 }
 
