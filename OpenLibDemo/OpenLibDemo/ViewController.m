@@ -15,11 +15,13 @@
 #import "HexColors.h"
 #import "DCPathButton.h"
 #import "SphereMenu.h"
+#import "QRCodeReaderViewController.h"
 
 
-@interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate, SphereMenuDelegate>
+@interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate, SphereMenuDelegate, QRCodeReaderDelegate>
 
 @property (nonatomic, weak) FSCalendar *calendar;
+@property (weak, nonatomic) IBOutlet UIButton *qrButton;
 
 @end
 
@@ -48,7 +50,41 @@
     [self dcPathMenu];
 
     [self sphereMenu];
+    
+    // QRCode
+    [self.view bringSubviewToFront:self.qrButton];
+    
 }
+
+- (IBAction)scanQRCode:(UIButton *)sender {
+    
+    QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+    
+    QRCodeReaderViewController *readerVC = [QRCodeReaderViewController readerWithCancelButtonTitle:@"cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+    readerVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    readerVC.delegate = self;
+    [reader setCompletionWithBlock:^(NSString * _Nullable resultAsString) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        NSLog(@"%@", resultAsString);
+    }];
+    
+    
+    [self presentViewController:readerVC animated:YES completion:nil];
+}
+
+#pragma mark - QRCodeReader Delegate Methods
+
+- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result {
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"%@", result);
+    }];
+}
+
+- (void)readerDidCancel:(QRCodeReaderViewController *)reader {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 - (void)sphereMenu {
     UIImage *startImage = [UIImage imageNamed:@"start"];

@@ -1,27 +1,39 @@
 PODS:
   - AwesomeMenu (1.0.0)
+  - CocoaSecurity (1.2.4)
   - DCPathButton (2.1.4)
   - FSCalendar (2.6.0)
   - FXBlurView (1.6.4)
   - HexColors (4.0.0)
+  - QRCodeReaderViewController (4.0.2)
+  - UMengAnalytics (4.1.8)
+  - YCXMenu (0.0.11)
   - YLGIFImage (0.11)
 
 DEPENDENCIES:
   - AwesomeMenu (~> 1.0.0)
+  - CocoaSecurity (~> 1.2.4)
   - DCPathButton (~> 2.1.4)
   - FSCalendar (~> 2.6.0)
   - FXBlurView (~> 1.6.4)
   - HexColors (~> 4.0.0)
+  - QRCodeReaderViewController (~> 4.0.2)
+  - UMengAnalytics (~> 4.1.8)
+  - YCXMenu (~> 0.0.11)
   - YLGIFImage (~> 0.11)
 
 SPEC CHECKSUMS:
   AwesomeMenu: 34bad7f873e4b3cfaa6651fabbb96607d0e8f2b3
+  CocoaSecurity: d288a6f87e0f363823d2cb83e753814a6944f71a
   DCPathButton: 99c8211ef3eafc3b438c917a4c7b4502fa77eee7
   FSCalendar: c00fa5f4c3ec343ee6f7b804ae19322e9898bb84
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
+  QRCodeReaderViewController: e8f27d035b3e72b1d4b1c61ff66458287e3be0ff
+  UMengAnalytics: 6ef66c49bea0779d2ce02a72d862510d97619a7a
+  YCXMenu: 6003bcd20d8ac72e3eb3c442c97ed21948c6dc1f
   YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
 
-PODFILE CHECKSUM: da69d0f9d20977423fe849d57ff0b55accf61aa3
+PODFILE CHECKSUM: 887d3d5e55b3d04fa03f297ce5ace80c51b5c254
 
 COCOAPODS: 1.1.1
