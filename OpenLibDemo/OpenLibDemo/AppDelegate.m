@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 #import "UMMobClick/MobClick.h"
 
+#define LOG_LEVEL_DEF ddLogLevel
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
+static const DDLogLevel ddLogLevel = DDLogLevelDebug;
+
 @interface AppDelegate ()
 
 @end
@@ -23,6 +28,18 @@
     UMConfigInstance.channelId = @"App store";
     
     [MobClick startWithConfigure:UMConfigInstance];
+    
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    
+    
+    
+    DDLogError(@"THIS IS A ERROR");
+    DDLogVerbose(@"Meet George Jetson");
+    
+    
     return YES;
 }
 

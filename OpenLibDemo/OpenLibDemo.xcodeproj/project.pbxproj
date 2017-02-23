@@ -32,6 +32,7 @@
 		A16810B71E5A9F4000457355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16810B51E5A9F4000457355 /* LaunchScreen.storyboard */; };
 		A16810C21E5A9F4000457355 /* OpenLibDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A16810C11E5A9F4000457355 /* OpenLibDemoUITests.m */; };
 		A16810CD1E5AA1FC00457355 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A16810CC1E5AA1FC00457355 /* 1.jpg */; };
+		A18FF8541E5ED08D00F2684E /* cart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A18FF8531E5ED08D00F2684E /* cart.jpg */; };
 		A1AD6E481E5BC74700502711 /* chooser-moment-icon-thought.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E461E5BC74700502711 /* chooser-moment-icon-thought.png */; };
 		A1AD6E491E5BC74700502711 /* chooser-moment-icon-thought@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E471E5BC74700502711 /* chooser-moment-icon-thought@2x.png */; };
 		A1AD6E4C1E5BC75000502711 /* chooser-moment-icon-thought-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = A1AD6E4A1E5BC75000502711 /* chooser-moment-icon-thought-highlighted.png */; };
@@ -114,6 +115,7 @@
 		A16810C11E5A9F4000457355 /* OpenLibDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenLibDemoUITests.m; sourceTree = "<group>"; };
 		A16810C31E5A9F4000457355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A16810CC1E5AA1FC00457355 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		A18FF8531E5ED08D00F2684E /* cart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cart.jpg; sourceTree = "<group>"; };
 		A1AD6E461E5BC74700502711 /* chooser-moment-icon-thought.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooser-moment-icon-thought.png"; sourceTree = "<group>"; };
 		A1AD6E471E5BC74700502711 /* chooser-moment-icon-thought@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooser-moment-icon-thought@2x.png"; sourceTree = "<group>"; };
 		A1AD6E4A1E5BC75000502711 /* chooser-moment-icon-thought-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooser-moment-icon-thought-highlighted.png"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				A16810AB1E5A9F4000457355 /* AppDelegate.m */,
 				A16810AD1E5A9F4000457355 /* ViewController.h */,
 				A16810AE1E5A9F4000457355 /* ViewController.m */,
+				A18FF8531E5ED08D00F2684E /* cart.jpg */,
 				A16810CC1E5AA1FC00457355 /* 1.jpg */,
 				A10052451E5ACF0D00B62785 /* 22.gif */,
 				A10052471E5AD6A200B62785 /* Images */,
@@ -440,6 +443,7 @@
 				A1AD6E511E5BC75500502711 /* chooser-moment-icon-sleep@2x.png in Resources */,
 				A100525F1E5AD6A200B62785 /* icon-plus-highlighted@2x.png in Resources */,
 				A100525D1E5AD6A200B62785 /* bg-menuitem@2x.png in Resources */,
+				A18FF8541E5ED08D00F2684E /* cart.jpg in Resources */,
 				A1AD6E6D1E5BC78900502711 /* chooser-moment-icon-camera-highlighted@2x.png in Resources */,
 				A1AD6E551E5BC75800502711 /* chooser-moment-icon-sleep-highlighted@2x.png in Resources */,
 				A16810B71E5A9F4000457355 /* LaunchScreen.storyboard in Resources */,

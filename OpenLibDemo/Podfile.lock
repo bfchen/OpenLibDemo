@@ -1,39 +1,52 @@
 PODS:
   - AwesomeMenu (1.0.0)
+  - CocoaLumberjack (3.0.0):
+    - CocoaLumberjack/Default (= 3.0.0)
+    - CocoaLumberjack/Extensions (= 3.0.0)
+  - CocoaLumberjack/Core (3.0.0)
+  - CocoaLumberjack/Default (3.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (3.0.0):
+    - CocoaLumberjack/Default
   - CocoaSecurity (1.2.4)
   - DCPathButton (2.1.4)
   - FSCalendar (2.6.0)
   - FXBlurView (1.6.4)
   - HexColors (4.0.0)
   - QRCodeReaderViewController (4.0.2)
-  - UMengAnalytics (4.1.8)
+  - RKNotificationHub (2.0.4)
+  - UMengAnalytics (4.1.10)
   - YCXMenu (0.0.11)
   - YLGIFImage (0.11)
 
 DEPENDENCIES:
   - AwesomeMenu (~> 1.0.0)
+  - CocoaLumberjack (~> 3.0.0)
   - CocoaSecurity (~> 1.2.4)
   - DCPathButton (~> 2.1.4)
   - FSCalendar (~> 2.6.0)
   - FXBlurView (~> 1.6.4)
   - HexColors (~> 4.0.0)
   - QRCodeReaderViewController (~> 4.0.2)
+  - RKNotificationHub (~> 2.0.4)
   - UMengAnalytics (~> 4.1.8)
   - YCXMenu (~> 0.0.11)
   - YLGIFImage (~> 0.11)
 
 SPEC CHECKSUMS:
   AwesomeMenu: 34bad7f873e4b3cfaa6651fabbb96607d0e8f2b3
+  CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
   CocoaSecurity: d288a6f87e0f363823d2cb83e753814a6944f71a
   DCPathButton: 99c8211ef3eafc3b438c917a4c7b4502fa77eee7
   FSCalendar: c00fa5f4c3ec343ee6f7b804ae19322e9898bb84
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   QRCodeReaderViewController: e8f27d035b3e72b1d4b1c61ff66458287e3be0ff
-  UMengAnalytics: 6ef66c49bea0779d2ce02a72d862510d97619a7a
+  RKNotificationHub: 3765424499139c3d3885b681bb0837f072d12ae6
+  UMengAnalytics: 40585031b7eb085534c68a951b394731e7166257
   YCXMenu: 6003bcd20d8ac72e3eb3c442c97ed21948c6dc1f
   YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
 
-PODFILE CHECKSUM: 887d3d5e55b3d04fa03f297ce5ace80c51b5c254
+PODFILE CHECKSUM: aff0cfcd38c7adb6e2a982ac820dd4acae773c7b
 
 COCOAPODS: 1.1.1

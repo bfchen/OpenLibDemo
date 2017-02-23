@@ -16,12 +16,14 @@
 #import "DCPathButton.h"
 #import "SphereMenu.h"
 #import "QRCodeReaderViewController.h"
+#import "RKNotificationHub.h"
 
 
 @interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate, SphereMenuDelegate, QRCodeReaderDelegate>
 
 @property (nonatomic, weak) FSCalendar *calendar;
 @property (weak, nonatomic) IBOutlet UIButton *qrButton;
+@property (nonatomic, strong) RKNotificationHub *hub;
 
 @end
 
@@ -54,6 +56,26 @@
     // QRCode
     [self.view bringSubviewToFront:self.qrButton];
     
+    // badge
+    [self addBadge];
+}
+
+
+
+- (void)addBadge {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(800, 600, 60, 40)];
+    imageView.image = [UIImage imageNamed:@"cart.jpg"];
+    [self.view addSubview:imageView];
+    
+    RKNotificationHub *hub = [[RKNotificationHub alloc] initWithView:imageView];
+    hub.count = 10;
+    [hub setCircleAtFrame:CGRectMake(45, -5, 20, 20)];
+    [hub pop];
+    self.hub = hub;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.hub bump];
 }
 
 - (IBAction)scanQRCode:(UIButton *)sender {
