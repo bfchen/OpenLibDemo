@@ -6,6 +6,10 @@ target 'OpenLibDemo' do
   # use_frameworks!
 
   # Pods for OpenLibDemo
+  #pod 'TSMessages', '~> 0.9.12'
+  pod 'DateTools', '~> 2.0.0'
+  pod 'QBImagePickerController', '~>3.4.0'
+  pod 'MWPhotoBrowser', '~> 2.1.2'
   pod 'RKNotificationHub', '~> 2.0.4'
   pod 'CocoaLumberjack', '~> 3.0.0'
   pod 'UMengAnalytics', '~> 4.1.8'
@@ -13,7 +17,7 @@ target 'OpenLibDemo' do
   pod 'CocoaSecurity', '~> 1.2.4'
   pod 'YCXMenu', '~> 0.0.11'
   pod 'DCPathButton', '~> 2.1.4'
-  pod 'HexColors', '~> 4.0.0'
+  pod 'HexColors', '~> 5.0.0'
   pod 'AwesomeMenu', '~> 1.0.0'
   pod 'YLGIFImage', '~> 0.11'
   pod 'FXBlurView', '~> 1.6.4'  

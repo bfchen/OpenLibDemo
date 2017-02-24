@@ -17,13 +17,15 @@
 #import "SphereMenu.h"
 #import "QRCodeReaderViewController.h"
 #import "RKNotificationHub.h"
+#import "QBImagePickerController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
-
-@interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate, SphereMenuDelegate, QRCodeReaderDelegate>
+@interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate, SphereMenuDelegate, QRCodeReaderDelegate, QBImagePickerControllerDelegate>
 
 @property (nonatomic, weak) FSCalendar *calendar;
 @property (weak, nonatomic) IBOutlet UIButton *qrButton;
 @property (nonatomic, strong) RKNotificationHub *hub;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 
@@ -58,12 +60,143 @@
     
     // badge
     [self addBadge];
+
+    // imagePicker
+    [self addImagePickerBtn];
 }
 
 
+- (void)addImagePickerBtn {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(800, 600, 80, 30);
+    [btn setTitle:@"图片选择器" forState:0];
+    [btn addTarget:self action:@selector(showImagePicler) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(880, 640, 100, 100)];
+    [self.view addSubview:self.imageView];
+}
+
+- (void)showImagePicler {
+    
+    // 方式一
+//    // 弹出系统的相册
+//         // 选择控制器（系统相册）
+//         UIImagePickerController *picekerVc = [[UIImagePickerController alloc] init];
+//    
+//         // 设置选择控制器的来源
+////          UIImagePickerControllerSourceTypePhotoLibrary 相册集
+////          UIImagePickerControllerSourceTypeSavedPhotosAlbum:照片库
+//         picekerVc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+//    
+//     // 设置代理
+//        picekerVc.delegate = self;
+//   
+//        // modal
+//        [self presentViewController:picekerVc animated:YES completion:nil];
+//    
+//    return;
+    
+    // 1 检查授权
+    NSString *tipTextWhenNoPhotosAuthorization; // 提示语
+    // 获取当前应用对照片的访问授权状态
+    ALAuthorizationStatus authorizationStatus = [ALAssetsLibrary authorizationStatus];
+    // 如果没有获取访问授权，或者访问授权状态已经被明确禁止，则显示提示语，引导用户开启授权
+    if (authorizationStatus == ALAuthorizationStatusRestricted || authorizationStatus == ALAuthorizationStatusDenied) {
+        NSDictionary *mainInfoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *appName = [mainInfoDictionary objectForKey:@"CFBundleDisplayName"];
+        tipTextWhenNoPhotosAuthorization = [NSString stringWithFormat:@"请在设备的\"设置-隐私-照片\"选项中，允许%@访问你的手机相册", appName];
+        // 展示提示语
+        return;
+    }
+    
+    
+    // 不能获取照片库的图片，意义小很多
+    QBImagePickerController *vc = [[QBImagePickerController alloc] init];
+    vc.allowsMultipleSelection = NO;
+    vc.allowsMultipleSelection = YES;
+//    vc.numberOfColumnsInPortrait = 5;
+    vc.numberOfColumnsInLandscape = 4;
+    vc.mediaType = QBImagePickerMediaTypeAny;
+    vc.showsNumberOfSelectedAssets = YES;
+//    vc.prompt = @"请选择图片";
+    vc.assetCollectionSubtypes = @[@(PHAssetCollectionSubtypeSmartAlbumUserLibrary), // Camera Roll
+                                   @(PHAssetCollectionSubtypeAlbumMyPhotoStream), // My Photo Stream
+                                   @(PHAssetCollectionSubtypeSmartAlbumPanoramas), // Panoramas
+                                   @(PHAssetCollectionSubtypeSmartAlbumVideos), // Videos
+                                   @(PHAssetCollectionSubtypeSmartAlbumBursts), // Bursts
+                                   @(PHAssetCollectionSubtypeAlbumRegular)];
+    /*
+     PHAssetCollectionSubtype
+     
+     PHAssetCollectionSubtypeAlbumRegular         = 2,
+     PHAssetCollectionSubtypeAlbumSyncedEvent     = 3,
+     PHAssetCollectionSubtypeAlbumSyncedFaces     = 4,
+     PHAssetCollectionSubtypeAlbumSyncedAlbum     = 5,
+     PHAssetCollectionSubtypeAlbumImported        = 6,
+     
+     PHAssetCollectionSubtypeAlbumMyPhotoStream   = 100,
+     PHAssetCollectionSubtypeAlbumCloudShared     = 101,
+     
+     PHAssetCollectionSubtypeSmartAlbumGeneric    = 200,
+     PHAssetCollectionSubtypeSmartAlbumPanoramas  = 201,
+     PHAssetCollectionSubtypeSmartAlbumVideos     = 202,
+     PHAssetCollectionSubtypeSmartAlbumFavorites  = 203,
+     PHAssetCollectionSubtypeSmartAlbumTimelapses = 204,
+     PHAssetCollectionSubtypeSmartAlbumAllHidden  = 205,
+     PHAssetCollectionSubtypeSmartAlbumRecentlyAdded = 206,
+     PHAssetCollectionSubtypeSmartAlbumBursts     = 207,
+     PHAssetCollectionSubtypeSmartAlbumSlomoVideos = 208,
+     PHAssetCollectionSubtypeSmartAlbumUserLibrary = 209,
+     PHAssetCollectionSubtypeSmartAlbumSelfPortraits PHOTOS_AVAILABLE_IOS_TVOS(9_0, 10_0) = 210,
+     PHAssetCollectionSubtypeSmartAlbumScreenshots PHOTOS_AVAILABLE_IOS_TVOS(9_0, 10_0) = 211,
+     PHAssetCollectionSubtypeSmartAlbumDepthEffect PHOTOS_AVAILABLE_IOS_TVOS(10_2, 10_1) = 212,
+
+     
+     
+     imagePickerController.assetCollectionSubtypes = @[
+     @(PHAssetCollectionSubtypeSmartAlbumUserLibrary), // Camera Roll
+     @(PHAssetCollectionSubtypeAlbumMyPhotoStream), // My Photo Stream
+     @(PHAssetCollectionSubtypeSmartAlbumPanoramas), // Panoramas
+     @(PHAssetCollectionSubtypeSmartAlbumVideos), // Videos
+     @(PHAssetCollectionSubtypeSmartAlbumBursts) // Bursts
+     ];
+    */
+    vc.delegate = self;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+
+- (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets {
+    
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    // 同步获得图片, 只会返回1张图片
+    options.synchronous = YES;
+    BOOL original = YES;
+    
+    for (PHAsset *asset in assets) {
+        // 是否要原图
+        
+        CGSize size = original ? CGSizeMake(asset.pixelWidth, asset.pixelHeight) : CGSizeZero;
+        
+        // 从asset中获得图片
+        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            self.imageView.image = result;
+        }];
+        
+        break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)addBadge {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(800, 600, 60, 40)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(700, 600, 60, 40)];
     imageView.image = [UIImage imageNamed:@"cart.jpg"];
     [self.view addSubview:imageView];
     
@@ -79,7 +212,6 @@
 }
 
 - (IBAction)scanQRCode:(UIButton *)sender {
-    
 //    NSAssert(NO, @"这是一个异常测试");
     
     QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
