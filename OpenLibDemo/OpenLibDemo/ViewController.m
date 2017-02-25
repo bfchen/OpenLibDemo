@@ -12,13 +12,14 @@
 #import "YLImageView.h"
 #import "YLGIFImage.h"
 #import "AwesomeMenu.h"
-#import "HexColors.h"
+#import "HexColor.h"
 #import "DCPathButton.h"
 #import "SphereMenu.h"
 #import "QRCodeReaderViewController.h"
 #import "RKNotificationHub.h"
 #import "QBImagePickerController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "TSMessage.h"
 
 @interface ViewController ()<FSCalendarDelegate, FSCalendarDataSource, AwesomeMenuDelegate, DCPathButtonDelegate, SphereMenuDelegate, QRCodeReaderDelegate, QBImagePickerControllerDelegate>
 
@@ -63,8 +64,43 @@
 
     // imagePicker
     [self addImagePickerBtn];
+    
+    
+    //  showMessages
+    [self addMessageBtn];
 }
 
+
+
+- (void)addMessageBtn {
+    UIButton *messBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    messBtn.frame = CGRectMake(800, 650, 100, 30);
+    [messBtn setTitle:@"发送一个消息" forState:0];
+    [messBtn addTarget:self action:@selector(showMessage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:messBtn];
+}
+
+- (void)showMessage {
+    
+    // 本地通知和远程通知可用
+    [TSMessage showNotificationInViewController:self
+                                          title:@"Update available"
+                                       subtitle:@"Please update the app"
+                                          image:nil
+                                           type:TSMessageNotificationTypeMessage
+                                       duration:TSMessageNotificationDurationAutomatic
+                                       callback:nil
+                                    buttonTitle:@"Update"
+                                 buttonCallback:^{
+                                     NSLog(@"User tapped the button");
+                                 }
+                                     atPosition:TSMessageNotificationPositionTop
+                           canBeDismissedByUser:YES];
+    
+    return;
+    
+    [TSMessage showNotificationWithTitle:@"消息" subtitle:@"这是一个测试消息" type:TSMessageNotificationTypeSuccess];
+}
 
 - (void)addImagePickerBtn {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -319,7 +355,7 @@
 - (void)hexColor {
 
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(300, 400, 100, 100)];
-    view.backgroundColor = [UIColor hx_colorWithHexRGBAString: @"#ff8942"];
+    view.backgroundColor = [UIColor colorWithHexString: @"#ff8942"];
     [self.view addSubview:view];
 }
 
